@@ -8,6 +8,9 @@ class CategoryResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :lists,
+             resource: EntryResource
+
   # Indirect associations
 
 end

@@ -11,6 +11,8 @@ class EntryResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :category
+
   belongs_to :creator,
              resource: UserResource
 
