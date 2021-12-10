@@ -6,50 +6,38 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Creator</dt>
-      <!-- Display creator_id start -->
       <dd>
         <% if @entry.creator.present? %>
           <%= link_to entry.creator, entry.creator %>
         <% end %>
       </dd>
-      <!-- Display creator_id end -->
 
       <dt>Neighborhood</dt>
-      <!-- Display neighborhood start -->
       <dd><%= entry.neighborhood %></dd>
-      <!-- Display neighborhood end -->
 
       <dt>Cityguide</dt>
-      <!-- Display cityguide_id start -->
       <dd>
         <% if @entry.cityguide.present? %>
           <%= link_to entry.cityguide, entry.cityguide %>
         <% end %>
       </dd>
-      <!-- Display cityguide_id end -->
 
       <dt>Geo location</dt>
-      <!-- Display geo_location start -->
       <dd>
         <div>
           <%= render partial: "entries/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display geo_location end -->
 
       <dt>Category</dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @entry.category.present? %>
           <%= link_to entry.category, entry.category %>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>Journal</dt>
-      <!-- Display journal start -->
       <dd><%= entry.journal %></dd>
-      <!-- Display journal end -->
 
     </dl>
 
@@ -58,21 +46,17 @@
         <%= link_to_show_or_back entry, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link entry start -->
       <div class="col">
         <%= link_to edit_entry_url(entry), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link entry end -->
 
-      <!-- Delete link entry start -->
       <div class="col">
         <%= link_to entry, method: :delete, data: { confirm: "Do you really want to delete this entry?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link entry end -->
     </div>
   </div>
 

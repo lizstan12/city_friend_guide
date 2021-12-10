@@ -1,7 +1,6 @@
 <% was_validated = category.errors.any? %>
 
 <%= form_with(model: category, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for art_design start -->
   <div class="form-group">
     <% art_design_class = "form-control" %>
     <% art_design_was_invalid = category.errors.include?(:art_design) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :art_design %>
-    <!-- Input for art_design start -->
     <%= f.text_field :art_design, class: art_design_class, placeholder: "Enter art design" %>
-    <!-- Input for art_design end -->
     <% if art_design_was_invalid %>
       <% category.errors.full_messages_for(:art_design).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for art_design end -->
-  <!-- Label and input for food start -->
   <div class="form-group">
     <% food_class = "form-control" %>
     <% food_was_invalid = category.errors.include?(:food) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :food %>
-    <!-- Input for food start -->
     <%= f.text_field :food, class: food_class, placeholder: "Enter food" %>
-    <!-- Input for food end -->
     <% if food_was_invalid %>
       <% category.errors.full_messages_for(:food).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for food end -->
-  <!-- Label and input for historical start -->
   <div class="form-group">
     <% historical_class = "form-control" %>
     <% historical_was_invalid = category.errors.include?(:historical) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :historical %>
-    <!-- Input for historical start -->
     <%= f.text_field :historical, class: historical_class, placeholder: "Enter historical" %>
-    <!-- Input for historical end -->
     <% if historical_was_invalid %>
       <% category.errors.full_messages_for(:historical).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for historical end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

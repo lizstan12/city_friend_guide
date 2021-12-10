@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @city_guide.entries.each do |entry| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to entry, entry %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to entry, method: :delete, data: { confirm: "Do you really want to delete this entry" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="city_guide_entries_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "city_guides/city_guide_entries_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
