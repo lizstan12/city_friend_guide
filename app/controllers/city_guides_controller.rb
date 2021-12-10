@@ -8,6 +8,7 @@ class CityGuidesController < ApplicationController
 
   # GET /city_guides/1
   def show
+    @entry = Entry.new
   end
 
   # GET /city_guides/new

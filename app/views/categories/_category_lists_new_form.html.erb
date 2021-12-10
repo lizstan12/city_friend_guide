@@ -1,0 +1,61 @@
+<!-- Form entry start -->
+<%= form_with(model: @entry, local: true) do |f| %>
+<!-- Form entry end -->
+
+  <!-- Label and input for creator_id start -->
+  <div class="form-group">
+    <%= f.label :creator_id %>
+
+    <!-- Input for creator_id start -->
+    <%= f.text_field :creator_id, class: "form-control" %>
+    <!-- Input for creator_id end -->
+  </div>
+  <!-- Label and input for creator_id end -->
+
+  <!-- Label and input for neighborhood start -->
+  <div class="form-group">
+    <%= f.label :neighborhood %>
+
+    <!-- Input for neighborhood start -->
+    <%= f.text_field :neighborhood, class: "form-control" %>
+    <!-- Input for neighborhood end -->
+  </div>
+  <!-- Label and input for neighborhood end -->
+
+  <!-- Label and input for cityguide_id start -->
+  <div class="form-group">
+    <%= f.label :cityguide_id %>
+
+    <!-- Input for cityguide_id start -->
+    <%= f.text_field :cityguide_id, class: "form-control" %>
+    <!-- Input for cityguide_id end -->
+  </div>
+  <!-- Label and input for cityguide_id end -->
+
+  <!-- Label and input for geo_location start -->
+  <div class="form-group">
+    <%= f.label :geo_location %>
+
+    <!-- Input for geo_location start -->
+    <%= f.text_field :geo_location, class: "form-control" %>
+    <!-- Input for geo_location end -->
+  </div>
+  <!-- Label and input for geo_location end -->
+
+  <!-- Label and input for category_id start -->
+  <!-- Input for category_id start -->
+  <%= f.hidden_field :category_id, value: @category.id %>
+  <!-- Input for category_id end -->
+  <!-- Label and input for category_id end -->
+
+  <!-- Label and input for journal start -->
+  <div class="form-group">
+    <%= f.label :journal %>
+    <!-- Input for journal start -->
+    <%= f.text_area :journal, rows: "3", class: "form-control" %>
+    <!-- Input for journal end -->
+  </div>
+  <!-- Label and input for journal end -->
+
+  <%= f.submit "Create entry", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
