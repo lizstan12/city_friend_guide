@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
 
   # GET /entries
   def index
-    @entries = Entry.all
+    @entries = Entry.page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@entries.where.not(:geo_location_latitude => nil)) do |entry, marker|
       marker.lat entry.geo_location_latitude
       marker.lng entry.geo_location_longitude

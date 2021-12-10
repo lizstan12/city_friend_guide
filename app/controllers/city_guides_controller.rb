@@ -3,7 +3,7 @@ class CityGuidesController < ApplicationController
 
   # GET /city_guides
   def index
-    @city_guides = CityGuide.all
+    @city_guides = CityGuide.page(params[:page]).per(10)
   end
 
   # GET /city_guides/1
