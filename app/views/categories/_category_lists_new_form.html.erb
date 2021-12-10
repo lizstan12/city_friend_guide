@@ -27,7 +27,7 @@
     <%= f.label :cityguide_id %>
 
     <!-- Input for cityguide_id start -->
-    <%= f.text_field :cityguide_id, class: "form-control" %>
+    <%= f.collection_select :cityguide_id, CityGuide.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for cityguide_id end -->
   </div>
   <!-- Label and input for cityguide_id end -->

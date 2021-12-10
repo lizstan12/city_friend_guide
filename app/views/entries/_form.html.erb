@@ -68,7 +68,7 @@
 
     <%= f.label :cityguide_id %>
     <!-- Input for cityguide_id start -->
-    <%= f.number_field :cityguide_id, class: cityguide_class, placeholder: "Enter cityguide" %>
+    <%= f.collection_select :cityguide_id, CityGuide.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for cityguide_id end -->
     <% if cityguide_was_invalid %>
       <% entry.errors.full_messages_for(:cityguide).each do |message| %>
