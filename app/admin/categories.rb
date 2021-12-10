@@ -1,5 +1,7 @@
 ActiveAdmin.register Category do
 
+ permit_params :art_design, :food, :historical
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
