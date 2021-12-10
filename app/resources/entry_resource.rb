@@ -11,6 +11,9 @@ class EntryResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :cityguide,
+             resource: CityGuideResource
+
   belongs_to :category
 
   belongs_to :creator,

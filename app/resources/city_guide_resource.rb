@@ -6,6 +6,9 @@ class CityGuideResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :entries,
+             foreign_key: :cityguide_id
+
   # Indirect associations
 
 end
