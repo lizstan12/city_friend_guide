@@ -1,0 +1,161 @@
+<% was_validated = entry.errors.any? %>
+
+<%= form_with(model: entry, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for creator_id start -->
+  <div class="form-group">
+    <% creator_class = "form-control" %>
+    <% creator_was_invalid = entry.errors.include?(:creator) %>
+
+    <% if was_validated %>
+      <% if creator_was_invalid %>
+        <% creator_class << " is-invalid" %>
+      <% else %>
+        <% creator_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :creator_id %>
+    <!-- Input for creator_id start -->
+    <%= f.number_field :creator_id, class: creator_class, placeholder: "Enter creator" %>
+    <!-- Input for creator_id end -->
+    <% if creator_was_invalid %>
+      <% entry.errors.full_messages_for(:creator).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for creator_id end -->
+  <!-- Label and input for neighborhood start -->
+  <div class="form-group">
+    <% neighborhood_class = "form-control" %>
+    <% neighborhood_was_invalid = entry.errors.include?(:neighborhood) %>
+
+    <% if was_validated %>
+      <% if neighborhood_was_invalid %>
+        <% neighborhood_class << " is-invalid" %>
+      <% else %>
+        <% neighborhood_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :neighborhood %>
+    <!-- Input for neighborhood start -->
+    <%= f.text_field :neighborhood, class: neighborhood_class, placeholder: "Enter neighborhood" %>
+    <!-- Input for neighborhood end -->
+    <% if neighborhood_was_invalid %>
+      <% entry.errors.full_messages_for(:neighborhood).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for neighborhood end -->
+  <!-- Label and input for cityguide_id start -->
+  <div class="form-group">
+    <% cityguide_class = "form-control" %>
+    <% cityguide_was_invalid = entry.errors.include?(:cityguide) %>
+
+    <% if was_validated %>
+      <% if cityguide_was_invalid %>
+        <% cityguide_class << " is-invalid" %>
+      <% else %>
+        <% cityguide_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :cityguide_id %>
+    <!-- Input for cityguide_id start -->
+    <%= f.number_field :cityguide_id, class: cityguide_class, placeholder: "Enter cityguide" %>
+    <!-- Input for cityguide_id end -->
+    <% if cityguide_was_invalid %>
+      <% entry.errors.full_messages_for(:cityguide).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for cityguide_id end -->
+  <!-- Label and input for geo_location start -->
+  <div class="form-group">
+    <% geo_location_class = "form-control" %>
+    <% geo_location_was_invalid = entry.errors.include?(:geo_location) %>
+
+    <% if was_validated %>
+      <% if geo_location_was_invalid %>
+        <% geo_location_class << " is-invalid" %>
+      <% else %>
+        <% geo_location_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :geo_location %>
+    <!-- Input for geo_location start -->
+    <%= f.text_field :geo_location, class: geo_location_class, placeholder: "Enter geo location" %>
+    <!-- Input for geo_location end -->
+    <% if geo_location_was_invalid %>
+      <% entry.errors.full_messages_for(:geo_location).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for geo_location end -->
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <% category_class = "form-control" %>
+    <% category_was_invalid = entry.errors.include?(:category) %>
+
+    <% if was_validated %>
+      <% if category_was_invalid %>
+        <% category_class << " is-invalid" %>
+      <% else %>
+        <% category_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :category_id %>
+    <!-- Input for category_id start -->
+    <%= f.number_field :category_id, class: category_class, placeholder: "Enter category" %>
+    <!-- Input for category_id end -->
+    <% if category_was_invalid %>
+      <% entry.errors.full_messages_for(:category).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for category_id end -->
+  <!-- Label and input for journal start -->
+  <div class="form-group">
+    <% journal_class = "form-control" %>
+    <% journal_was_invalid = entry.errors.include?(:journal) %>
+
+    <% if was_validated %>
+      <% if journal_was_invalid %>
+        <% journal_class << " is-invalid" %>
+      <% else %>
+        <% journal_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :journal %>
+    <!-- Input for journal start -->
+    <%= f.text_area :journal, class: journal_class, placeholder: "Enter journal" %>
+    <!-- Input for journal end -->
+    <% if journal_was_invalid %>
+      <% entry.errors.full_messages_for(:journal).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for journal end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

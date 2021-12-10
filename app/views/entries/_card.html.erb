@@ -1,0 +1,66 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Entry #<%= entry.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Creator</dt>
+      <!-- Display creator_id start -->
+      <dd><%= entry.creator_id %></dd>
+      <!-- Display creator_id end -->
+
+      <dt>Neighborhood</dt>
+      <!-- Display neighborhood start -->
+      <dd><%= entry.neighborhood %></dd>
+      <!-- Display neighborhood end -->
+
+      <dt>Cityguide</dt>
+      <!-- Display cityguide_id start -->
+      <dd><%= entry.cityguide_id %></dd>
+      <!-- Display cityguide_id end -->
+
+      <dt>Geo location</dt>
+      <!-- Display geo_location start -->
+      <dd><%= entry.geo_location %></dd>
+      <!-- Display geo_location end -->
+
+      <dt>Category</dt>
+      <!-- Display category_id start -->
+      <dd><%= entry.category_id %></dd>
+      <!-- Display category_id end -->
+
+      <dt>Journal</dt>
+      <!-- Display journal start -->
+      <dd><%= entry.journal %></dd>
+      <!-- Display journal end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back entry, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link entry start -->
+      <div class="col">
+        <%= link_to edit_entry_url(entry), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link entry end -->
+
+      <!-- Delete link entry start -->
+      <div class="col">
+        <%= link_to entry, method: :delete, data: { confirm: "Do you really want to delete this entry?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link entry end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(entry.updated_at) %> ago
+  </div>
+</div>
