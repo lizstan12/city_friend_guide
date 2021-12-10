@@ -22,7 +22,11 @@
 
       <dt>Geo location</dt>
       <!-- Display geo_location start -->
-      <dd><%= entry.geo_location %></dd>
+      <dd>
+        <div>
+          <%= render partial: "entries/one_photo_map" %>
+        </div>
+      </dd>
       <!-- Display geo_location end -->
 
       <dt>Category</dt>

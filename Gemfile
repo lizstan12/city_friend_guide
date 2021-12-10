@@ -46,3 +46,5 @@ gem 'shoulda-matchers'
 gem 'ideas_generators', github: 'firstdraft/ideas_generators'
 gem 'web_git', github: 'firstdraft/web_git', group: :development
 gem 'activeadmin', '2.2.0'
+gem 'gmaps4rails'
+gem 'underscore-rails'

@@ -4,6 +4,11 @@ class EntriesController < ApplicationController
   # GET /entries
   def index
     @entries = Entry.all
+    @location_hash = Gmaps4rails.build_markers(@entries.where.not(:geo_location_latitude => nil)) do |entry, marker|
+      marker.lat entry.geo_location_latitude
+      marker.lng entry.geo_location_longitude
+      marker.infowindow "<h5><a href='/entries/#{entry.id}'>#{entry.creator_id}</a></h5><small>#{entry.geo_location_formatted_address}</small>"
+    end
   end
 
   # GET /entries/1
