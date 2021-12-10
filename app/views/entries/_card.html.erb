@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>Creator</dt>
       <!-- Display creator_id start -->
-      <dd><%= entry.creator_id %></dd>
+      <dd>
+        <% if @entry.creator.present? %>
+          <%= link_to entry.creator, entry.creator %>
+        <% end %>
+      </dd>
       <!-- Display creator_id end -->
 
       <dt>Neighborhood</dt>
@@ -17,7 +21,11 @@
 
       <dt>Cityguide</dt>
       <!-- Display cityguide_id start -->
-      <dd><%= entry.cityguide_id %></dd>
+      <dd>
+        <% if @entry.cityguide.present? %>
+          <%= link_to entry.cityguide, entry.cityguide %>
+        <% end %>
+      </dd>
       <!-- Display cityguide_id end -->
 
       <dt>Geo location</dt>
@@ -31,7 +39,11 @@
 
       <dt>Category</dt>
       <!-- Display category_id start -->
-      <dd><%= entry.category_id %></dd>
+      <dd>
+        <% if @entry.category.present? %>
+          <%= link_to entry.category, entry.category %>
+        <% end %>
+      </dd>
       <!-- Display category_id end -->
 
       <dt>Journal</dt>
