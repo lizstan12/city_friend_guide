@@ -1,6 +1,9 @@
 class Entry < ApplicationRecord
   # Direct associations
 
+  belongs_to :creator,
+             :class_name => "User"
+
   # Indirect associations
 
   # Validations
