@@ -10,5 +10,4 @@ class CityGuideResource < ApplicationResource
              foreign_key: :cityguide_id
 
   # Indirect associations
-
 end

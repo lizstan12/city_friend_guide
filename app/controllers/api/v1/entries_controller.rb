@@ -13,7 +13,7 @@ class Api::V1::EntriesController < Api::V1::GraphitiController
     entry = EntryResource.build(params)
 
     if entry.save
-      render jsonapi: entry, status: 201
+      render jsonapi: entry, status: :created
     else
       render jsonapi_errors: entry
     end
@@ -33,7 +33,7 @@ class Api::V1::EntriesController < Api::V1::GraphitiController
     entry = EntryResource.find(params)
 
     if entry.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: entry
     end

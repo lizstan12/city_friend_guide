@@ -1,6 +1,6 @@
 ActiveAdmin.register Entry do
-
- permit_params :creator_id, :neighborhood, :cityguide_id, :geo_location, :category_id, :journal
+  permit_params :creator_id, :neighborhood, :cityguide_id, :geo_location,
+                :category_id, :journal
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +14,4 @@ ActiveAdmin.register Entry do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
 end

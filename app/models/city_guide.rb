@@ -2,8 +2,8 @@ class CityGuide < ApplicationRecord
   # Direct associations
 
   has_many   :entries,
-             :foreign_key => "cityguide_id",
-             :dependent => :destroy
+             foreign_key: "cityguide_id",
+             dependent: :destroy
 
   # Indirect associations
 
@@ -14,5 +14,4 @@ class CityGuide < ApplicationRecord
   def to_s
     entry_id
   end
-
 end

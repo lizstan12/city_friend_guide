@@ -2,9 +2,9 @@ class User < ApplicationRecord
   # Direct associations
 
   has_many   :lists,
-             :class_name => "Entry",
-             :foreign_key => "creator_id",
-             :dependent => :destroy
+             class_name: "Entry",
+             foreign_key: "creator_id",
+             dependent: :destroy
 
   # Indirect associations
 
@@ -15,5 +15,4 @@ class User < ApplicationRecord
   def to_s
     created_at
   end
-
 end

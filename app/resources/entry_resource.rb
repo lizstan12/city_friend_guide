@@ -20,5 +20,4 @@ class EntryResource < ApplicationResource
              resource: UserResource
 
   # Indirect associations
-
 end
