@@ -1,0 +1,31 @@
+<% was_validated = city_guide.errors.any? %>
+
+<%= form_with(model: city_guide, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for entry_id start -->
+  <div class="form-group">
+    <% entry_class = "form-control" %>
+    <% entry_was_invalid = city_guide.errors.include?(:entry) %>
+
+    <% if was_validated %>
+      <% if entry_was_invalid %>
+        <% entry_class << " is-invalid" %>
+      <% else %>
+        <% entry_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :entry_id %>
+    <!-- Input for entry_id start -->
+    <%= f.number_field :entry_id, class: entry_class, placeholder: "Enter entry" %>
+    <!-- Input for entry_id end -->
+    <% if entry_was_invalid %>
+      <% city_guide.errors.full_messages_for(:entry).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for entry_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
