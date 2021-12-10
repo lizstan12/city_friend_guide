@@ -11,6 +11,9 @@ class EntryResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :creator,
+             resource: UserResource
+
   # Indirect associations
 
 end
