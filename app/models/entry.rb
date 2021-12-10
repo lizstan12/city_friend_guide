@@ -1,6 +1,9 @@
 class Entry < ApplicationRecord
   # Direct associations
 
+  belongs_to :cityguide,
+             :class_name => "CityGuide"
+
   belongs_to :category
 
   belongs_to :creator,
