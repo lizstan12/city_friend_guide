@@ -53,21 +53,31 @@
 
 
   <div class="form-group">
-    <%= f.label :created_at, "User Created at" %>
+    <%= f.label :creator_first_name_cont, "Creator first_name contains" %>
+    <%= f.text_field :creator_first_name_cont, :class => "form-control", :placeholder => "Creator first_name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category_art_design_cont, "Category art_design contains" %>
+    <%= f.text_field :category_art_design_cont, :class => "form-control", :placeholder => "Category art_design contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "CityList Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='creatorgteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :creator_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "User Created at greater than or equal to", :data => {:target => '#creatorgteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#creatorgteqcreated_atPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='cityguidegteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :cityguide_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "CityList Created at greater than or equal to", :data => {:target => '#cityguidegteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#cityguidegteqcreated_atPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
         </div>
       </div>
 
       <div class='col-md-6'>
-        <div class='input-group date' id='creatorlteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :creator_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "User Created at less than or equal to", :data => {:target => '#creatorlteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#creatorlteqcreated_atPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='cityguidelteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :cityguide_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "CityList Created at less than or equal to", :data => {:target => '#cityguidelteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#cityguidelteqcreated_atPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
         </div>
@@ -76,38 +86,21 @@
   </div>
   <script type="text/javascript">
       $(function () {
-          $('#creatorgteqcreated_atPicker').datetimepicker({
+          $('#cityguidegteqcreated_atPicker').datetimepicker({
               format: 'YYYY-MM-DD hh:mm:SS'
           });
-          $('#creatorlteqcreated_atPicker').datetimepicker({
+          $('#cityguidelteqcreated_atPicker').datetimepicker({
               useCurrent: false,
               format: 'YYYY-MM-DD hh:mm:SS'
           });
-          $('#creatorgteqcreated_atPicker').on("dp.change", function (e) {
-              $('#creatorlteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          $('#cityguidegteqcreated_atPicker').on("dp.change", function (e) {
+              $('#cityguidelteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
           });
-          $('#creatorlteqcreated_atPicker').on("dp.change", function (e) {
-              $('#creatorgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          $('#cityguidelteqcreated_atPicker').on("dp.change", function (e) {
+              $('#cityguidegteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
           });
       });
   </script>
-
-  <div class="form-group">
-    <%= f.label :category_art_design_cont, "Category art_design contains" %>
-    <%= f.text_field :category_art_design_cont, :class => "form-control", :placeholder => "Category art_design contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :entry_id, "CityGuide Entry" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <%= f.text_field :cityguide_entry_id_gteq, :class => "form-control", :placeholder => "CityGuide Entry greater than or equal to" %>
-      </div>
-      <div class='col-md-6'>
-        <%= f.text_field :cityguide_entry_id_lteq, :class => "form-control", :placeholder => "CityGuide Entry less than or equal to" %>
-      </div>
-    </div>
-  </div>
 
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>

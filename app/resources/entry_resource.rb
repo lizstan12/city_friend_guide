@@ -4,15 +4,17 @@ class EntryResource < ApplicationResource
   attribute :updated_at, :datetime, writable: false
   attribute :creator_id, :integer
   attribute :neighborhood, :string
-  attribute :cityguide_id, :integer
+  attribute :citylist_id, :integer
   attribute :geo_location, :string
   attribute :category_id, :integer
   attribute :journal, :string
+  attribute :status, :string_enum, allow: Entry.statuses.keys
 
   # Direct associations
 
   belongs_to :cityguide,
-             resource: CityGuideResource
+             resource: CityListResource,
+             foreign_key: :citylist_id
 
   belongs_to :category
 

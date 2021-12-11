@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   scope path: ApplicationResource.endpoint_namespace,
         defaults: { format: :jsonapi } do
     scope module: "api/v1", as: "api" do
-      resources :city_guides
+      resources :followers
+
+      resources :city_lists
 
       resources :categories
 
@@ -15,7 +17,8 @@ Rails.application.routes.draw do
   end
   ActiveAdmin.routes(self)
   root to: "users#index"
-  resources :city_guides
+  resources :followers
+  resources :city_lists
   resources :categories
   resources :entries
   resources :users

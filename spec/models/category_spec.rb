@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Category, type: :model do
   describe "Direct Associations" do
-    it { should have_many(:lists) }
+    it { should have_many(:entries) }
   end
 
   describe "InDirect Associations" do

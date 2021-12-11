@@ -15,7 +15,7 @@
       <dt>Neighborhood</dt>
       <dd><%= entry.neighborhood %></dd>
 
-      <dt>Cityguide</dt>
+      <dt>Citylist</dt>
       <dd>
         <% if @entry.cityguide.present? %>
           <%= link_to entry.cityguide, entry.cityguide %>
@@ -38,6 +38,9 @@
 
       <dt>Journal</dt>
       <dd><%= entry.journal %></dd>
+
+      <dt>Status</dt>
+      <dd><%= entry.status %></dd>
 
     </dl>
 

@@ -46,21 +46,21 @@
     <% end %>
   </div>
   <div class="form-group">
-    <% cityguide_class = "form-control" %>
-    <% cityguide_was_invalid = entry.errors.include?(:cityguide) %>
+    <% citylist_class = "form-control" %>
+    <% citylist_was_invalid = entry.errors.include?(:citylist) %>
 
     <% if was_validated %>
-      <% if cityguide_was_invalid %>
-        <% cityguide_class << " is-invalid" %>
+      <% if citylist_was_invalid %>
+        <% citylist_class << " is-invalid" %>
       <% else %>
-        <% cityguide_class << " is-valid" %>
+        <% citylist_class << " is-valid" %>
       <% end %>
     <% end %>
 
-    <%= f.label :cityguide_id %>
-    <%= f.collection_select :cityguide_id, CityGuide.all, :id, :to_s, {}, class: "form-control" %>
-    <% if cityguide_was_invalid %>
-      <% entry.errors.full_messages_for(:cityguide).each do |message| %>
+    <%= f.label :citylist_id %>
+    <%= f.collection_select :citylist_id, CityList.all, :id, :to_s, {}, class: "form-control" %>
+    <% if citylist_was_invalid %>
+      <% entry.errors.full_messages_for(:citylist).each do |message| %>
         <div class="invalid-feedback d-flex">
           <%= message %>
         </div>
@@ -127,6 +127,28 @@
     <%= f.text_area :journal, class: journal_class, placeholder: "Enter journal" %>
     <% if journal_was_invalid %>
       <% entry.errors.full_messages_for(:journal).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <% status_class = "form-control" %>
+    <% status_was_invalid = entry.errors.include?(:status) %>
+
+    <% if was_validated %>
+      <% if status_was_invalid %>
+        <% status_class << " is-invalid" %>
+      <% else %>
+        <% status_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select(Entry.statuses.keys), {}, class: "form-control" %>
+    <% if status_was_invalid %>
+      <% entry.errors.full_messages_for(:status).each do |message| %>
         <div class="invalid-feedback d-flex">
           <%= message %>
         </div>
