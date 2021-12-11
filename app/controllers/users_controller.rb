@@ -3,10 +3,12 @@ class UsersController < ApplicationController
 
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true).includes(:lists).page(params[:page]).per(10)
+    @users = @q.result(distinct: true).includes(:city_lists, :followers,
+                                                :follower_requests).page(params[:page]).per(10)
   end
 
   def show
+    @follower = Follower.new
     @entry = Entry.new
   end
 
@@ -46,6 +48,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.fetch(:user, {})
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
 end

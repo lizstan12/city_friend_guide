@@ -59,7 +59,7 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    params.require(:entry).permit(:creator_id, :neighborhood, :cityguide_id,
-                                  :geo_location, :category_id, :journal)
+    params.require(:entry).permit(:creator_id, :neighborhood, :citylist_id,
+                                  :geo_location, :category_id, :journal, :status)
   end
 end

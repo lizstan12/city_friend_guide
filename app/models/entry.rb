@@ -19,10 +19,13 @@ class Entry < ApplicationRecord
       end
     end
   end
+  enum status: { "visited" => 0, "to_visit" => 1 }
+
   # Direct associations
 
   belongs_to :cityguide,
-             class_name: "CityGuide"
+             class_name: "CityList",
+             foreign_key: "citylist_id"
 
   belongs_to :category
 

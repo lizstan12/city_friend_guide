@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @q = Category.ransack(params[:q])
-    @categories = @q.result(distinct: true).includes(:lists).page(params[:page]).per(10)
+    @categories = @q.result(distinct: true).includes(:entries).page(params[:page]).per(10)
   end
 
   def show
